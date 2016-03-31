@@ -19,6 +19,22 @@
 	<key>scopeName</key>
 	<string>source.yacc</string>
 	
+	<key>injections</key>
+	<dict>
+		<!-- Inject injected.c++ into embedded.c++.yacc-->
+		<!-- IMPORTANT: The names used for injections are EXTREMELY picky -->
+		<key>cpp.yacc</key> 
+		<dict>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>#injected.c++</string>
+				</dict>
+			</array>
+		</dict>
+	</dict>
+	
 	<key>patterns</key>
 	<array>
 		<dict>
@@ -53,11 +69,19 @@
 				</dict>
 			</dict>
 			
+			<key>name</key>
+			<string>cpp.yacc</string>
+		</dict>
+		
+		<!-- This is injected into embedded.c++.yacc in the injections dict -->
+		<!-- DO NOT USE DIRECTLY -->
+		<key>injected.c++</key>
+		<dict>
 			<key>patterns</key>
 			<array>
 				<dict>
 					<key>include</key>
-					<string>embedded.c++.yacc</string>
+					<string>source.c++</string>
 				</dict>
 			</array>
 		</dict>
