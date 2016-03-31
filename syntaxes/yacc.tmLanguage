@@ -140,6 +140,16 @@
 			</array>
 		</dict>
 		
+		<!-- Special Symbol Identifiers -->
+		<key>special_identifiers</key>
+		<dict>    
+		    <key>match</key>
+			<string>[@$](\d+|\$)</string>
+			
+			<key>name</key>
+			<string>support.variable.yacc</string>
+        </dict>
+		
 		<key>grammar.before</key>
 		<dict>    
             <key>patterns</key>
@@ -317,6 +327,14 @@
 			
 		    <key>name</key>
 			<string>cpp.yacc</string>
+			
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>#special_identifiers</string>
+				</dict>
+			</array>
         </dict>
 		
 		<key>grammar.after</key>
