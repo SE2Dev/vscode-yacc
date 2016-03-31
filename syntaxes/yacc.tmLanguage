@@ -61,7 +61,85 @@
 				</dict>
 			</array>
 		</dict>
-	
+		
+		<!-- String - Double Quote -->
+		<key>string.double_quote</key>
+		<dict>
+			<key>begin</key>
+			<string>"</string>
+			<key>beginCaptures</key>
+			<dict>
+				<key>0</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.string.begin.yacc</string>
+				</dict>
+			</dict>
+			
+			<key>end</key>
+			<string>"</string>
+			<key>endCaptures</key>
+			<dict>
+				<key>0</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.string.end.yacc</string>
+				</dict>
+			</dict>
+			
+			<key>name</key>
+			<string>string.quoted.double.yacc</string>
+			
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>source.c#string_escaped_char</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>source.c#string_placeholder</string>
+				</dict>
+			</array>
+		</dict>
+		
+		<!-- String - Single Quote -->
+		<key>string.single_quote</key>
+		<dict>
+			<key>begin</key>
+			<string>'</string>
+			<key>beginCaptures</key>
+			<dict>
+				<key>0</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.string.begin.yacc</string>
+				</dict>
+			</dict>
+			
+			<key>end</key>
+			<string>'</string>
+			<key>endCaptures</key>
+			<dict>
+				<key>0</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.string.end.yacc</string>
+				</dict>
+			</dict>
+			
+			<key>name</key>
+			<string>string.quoted.single.c</string>
+			
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>source.c#string_escaped_char</string>
+				</dict>
+			</array>
+		</dict>
+		
 		<key>decls.c++</key>
 		<dict>
 			<key>begin</key>
@@ -94,6 +172,14 @@
 		<dict>    
             <key>patterns</key>
 			<array>
+				<dict>
+					<key>include</key>
+					<string>#string.double_quote</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#string.single_quote</string>
+				</dict>
 				<dict>
 					<key>include</key>
 					<string>#options_type</string>
