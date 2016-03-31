@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>fileTypes</key>
+	<array>
+		<string>y</string>
+		<string>yy</string>
+		<string>ypp</string>
+		<string>yxx</string>
+		<string>y++</string>
+		<string>bison</string>
+		<string>BISON</string>
+	</array>
+	<key>name</key>
+	<string>Yacc</string>
+	
+	<key>scopeName</key>
+	<string>source.yacc</string>
+	
+	<key>patterns</key>
+	<array>
+		<!-- There's Nothing Here -->
+	</array>
+	
+	<key>repository</key>
+	<dict>
+		<!-- There's Nothing Here -->
+	</dict>
+</dict>
+</plist>
