@@ -41,10 +41,27 @@
 			<key>include</key>
 			<string>#decls.c++</string>
 		</dict>
+		<dict>
+			<key>include</key>
+			<string>#options</string>
+		</dict>
 	</array>
 	
 	<key>repository</key>
 	<dict>
+		<!-- This is injected into embedded.c++.yacc in the injections dict -->
+		<!-- DO NOT USE DIRECTLY -->
+		<key>injected.c++</key>
+		<dict>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>source.c++</string>
+				</dict>
+			</array>
+		</dict>
+	
 		<key>decls.c++</key>
 		<dict>
 			<key>begin</key>
@@ -73,18 +90,49 @@
 			<string>cpp.yacc</string>
 		</dict>
 		
-		<!-- This is injected into embedded.c++.yacc in the injections dict -->
-		<!-- DO NOT USE DIRECTLY -->
-		<key>injected.c++</key>
-		<dict>
-			<key>patterns</key>
+		<key>options</key>
+		<dict>    
+            <key>patterns</key>
 			<array>
 				<dict>
 					<key>include</key>
-					<string>source.c++</string>
+					<string>#options_type</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#options_basic</string>
 				</dict>
 			</array>
-		</dict>
+        </dict>
+		
+		<key>options_basic</key>
+		<dict>    
+            <key>match</key>
+			<string>^%(debug|defines|destructor|dprec|error-verbose|expect|glr-parser|initial-action|left|lex-param|locations|merge|name-prefix|no[_-]lines|nonassoc|output|parse-param|prec|pure[_-]parser|raw|require|right|start|token[_-]table|union|token)</string>
+			
+			<key>name</key>
+			<string>keyword.source.yacc</string>
+        </dict>
+		
+		<key>options_type</key>
+		<dict>    
+            <key>match</key>
+			<string>(^%(?:token|type))\s*\<(.*?)\></string>
+			
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+				    <key>name</key>
+				    <string>keyword.source.yacc</string>
+				</dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>support.type.yacc</string>
+				</dict>
+			</dict>
+        </dict>
 	</dict>
 </dict>
 </plist>
