@@ -1,26 +1,41 @@
 {
-	"name": "vscode-yacc",
-	"displayName": "Bison & Yacc",
-	"description": "Syntax highlighting for Bison and Yacc in VSCode",
-	"version": "0.0.1",
-	"publisher": "SE2Dev",
-	"engines": {
-		"vscode": "^0.10.6"
-	},
-	"categories": [
-		"Languages"
-	],
-	"contributes": {
-		"languages": [{
-			"id": "yacc",
-			"aliases": ["Yacc", "yacc"],
-			"extensions": [".y",".yy",".ypp",".yxx",".y++",".bison",".BISON"],
-			"configuration": "./yacc.configuration.json"
-		}],
-		"grammars": [{
-			"language": "yacc",
-			"scopeName": "source.yacc",
-			"path": "./syntaxes/yacc.tmLanguage"
-		}]
-	}
+  "name": "vscode-yacc",
+  "displayName": "Bison & Yacc",
+  "description": "Syntax highlighting for Bison and Yacc in VSCode",
+  "version": "1.0.0",
+  "publisher": "SE2Dev",
+  "engines": {
+    "vscode": "^0.10.6"
+  },
+  "categories": [
+    "Languages"
+  ],
+  "contributes": {
+    "languages": [
+      {
+        "id": "yacc",
+        "aliases": [
+          "Yacc",
+          "yacc"
+        ],
+        "extensions": [
+          ".y",
+          ".yy",
+          ".ypp",
+          ".yxx",
+          ".y++",
+          ".bison",
+          ".BISON"
+        ],
+        "configuration": "./yacc.configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "yacc",
+        "scopeName": "source.yacc",
+        "path": "./syntaxes/yacc.tmLanguage"
+      }
+    ]
+  }
 }
