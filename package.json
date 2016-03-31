@@ -17,7 +17,13 @@
 			"extensions": [".y",".yy",".ypp",".yxx",".y++",".bison",".BISON"],
 			"configuration": "./yacc.configuration.json"
 		}],
-		"grammars": [{
+		"grammars": [
+		{
+			"language": "yacc",
+			"scopeName": "embedded.c++.yacc",
+			"path": "./syntaxes/yacc.c++.tmLanguage"
+		},
+		{
 			"language": "yacc",
 			"scopeName": "source.yacc",
 			"path": "./syntaxes/yacc.tmLanguage"

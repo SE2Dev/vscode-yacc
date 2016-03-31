@@ -12,6 +12,7 @@
 		<string>bison</string>
 		<string>BISON</string>
 	</array>
+	
 	<key>name</key>
 	<string>Yacc</string>
 	
@@ -20,12 +21,48 @@
 	
 	<key>patterns</key>
 	<array>
-		<!-- There's Nothing Here -->
+		<dict>
+			<key>include</key>
+			<string>#decls.c++</string>
+		</dict>
 	</array>
 	
 	<key>repository</key>
 	<dict>
-		<!-- There's Nothing Here -->
+		<key>decls.c++</key>
+		<dict>
+			<key>begin</key>
+			<string>^%{</string>
+			<key>beginCaptures</key>
+			<dict>
+				<key>0</key>
+				<dict>
+				    <key>name</key>
+				    <string>punctuation.separator.tag.section.yacc</string>
+				</dict>
+			</dict>
+			
+			<key>end</key>
+			<string>^%}</string>
+			<key>endCaptures</key>
+			<dict>
+				<key>0</key>
+				<dict>
+				    <key>name</key>
+				    <string>punctuation.separator.tag.section.yacc</string>
+				</dict>
+			</dict>
+			
+			<string>meta.block.embedded.c++.yacc</string>
+			
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>embedded.c++.yacc</string>
+				</dict>
+			</array>
+		</dict>
 	</dict>
 </dict>
 </plist>
