@@ -4,6 +4,10 @@
   "description": "Syntax highlighting for Bison and Yacc in VSCode",
   "version": "1.0.0",
   "publisher": "SE2Dev",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/SE2Dev/vscode-yacc.git"
+  },
   "engines": {
     "vscode": "^0.10.6"
   },
