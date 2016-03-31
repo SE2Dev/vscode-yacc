@@ -21,7 +21,7 @@
 	
 	<key>injections</key>
 	<dict>
-		<!-- Inject injected.c++ into embedded.c++.yacc-->
+		<!-- Inject injected.c++ into cpp.yacc-->
 		<!-- IMPORTANT: The names used for injections are EXTREMELY picky -->
 		<key>cpp.yacc - (string | comment)</key> 
 		<dict>
@@ -39,17 +39,17 @@
 	<array>
 		<dict>
 			<key>include</key>
-			<string>#decls.c++</string>
+			<string>#grammar.before</string>
 		</dict>
 		<dict>
 			<key>include</key>
-			<string>#options</string>
+			<string>#grammar.rules</string>
 		</dict>
 	</array>
 	
 	<key>repository</key>
 	<dict>
-		<!-- This is injected into embedded.c++.yacc in the injections dict -->
+		<!-- This is injected into cpp.yacc in the injections dict -->
 		<!-- DO NOT USE DIRECTLY -->
 		<key>injected.c++</key>
 		<dict>
@@ -140,6 +140,21 @@
 			</array>
 		</dict>
 		
+		<key>grammar.before</key>
+		<dict>    
+            <key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>#decls.c++</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#options</string>
+				</dict>
+			</array>
+        </dict>
+		
 		<key>decls.c++</key>
 		<dict>
 			<key>begin</key>
@@ -169,7 +184,7 @@
 		</dict>
 		
 		<key>options</key>
-		<dict>    
+		<dict>	    
             <key>patterns</key>
 			<array>
 				<dict>
@@ -222,6 +237,103 @@
 					<string>support.type.yacc</string>
 				</dict>
 			</dict>
+        </dict>
+		
+		<key>grammar.rules</key>
+		<dict>    
+            <key>begin</key>
+			<string>^%%</string>
+			<key>beginCaptures</key>
+			<dict>
+				<key>0</key>
+				<dict>
+				    <key>name</key>
+				    <string>punctuation.separator.tag.section.yacc</string>
+				</dict>
+			</dict>
+			
+			<!--<key>end</key>
+			<string>^%%</string>
+           <key>endCaptures</key>
+			<dict>
+				<key>0</key>
+				<dict>
+				    <key>name</key>
+				    <string>punctuation.separator.tag.section.yacc</string>
+				</dict>
+			</dict>-->
+		   
+		    <key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>#grammar.after</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#rule</string>
+				</dict>
+			</array>
+        </dict>
+		
+		<key>rule</key>
+		<dict>    
+            <key>begin</key>
+			<string>(_?[\w\-_]*[\w\d\-_]\w*):</string>
+			<key>beginCaptures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+				    <key>name</key>
+				    <string>variable.language.yacc</string>
+				</dict>
+			</dict>
+			<key>end</key>
+			<string>;</string>
+			
+		    <key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>#rule.code</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#string.single_quote</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#string.double_quote</string>
+				</dict>
+			</array>
+        </dict>
+		
+		<key>rule.code</key>
+		<dict>    
+            <key>begin</key>
+			<string>{</string>
+			<key>end</key>
+			<string>}</string>
+			
+		    <key>name</key>
+			<string>cpp.yacc</string>
+        </dict>
+		
+		<key>grammar.after</key>
+		<dict>    
+            <key>begin</key>
+			<string>^%%</string>
+			<key>beginCaptures</key>
+			<dict>
+				<key>0</key>
+				<dict>
+				    <key>name</key>
+				    <string>keyword.source.yacc</string>
+				</dict>
+			</dict>
+	
+			<key>name</key>
+			<string>cpp.yacc</string>
         </dict>
 	</dict>
 </dict>
