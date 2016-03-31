@@ -23,7 +23,7 @@
 	<dict>
 		<!-- Inject injected.c++ into embedded.c++.yacc-->
 		<!-- IMPORTANT: The names used for injections are EXTREMELY picky -->
-		<key>cpp.yacc</key> 
+		<key>cpp.yacc - (string | comment)</key> 
 		<dict>
 			<key>patterns</key>
 			<array>
