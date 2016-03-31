@@ -53,8 +53,6 @@
 				</dict>
 			</dict>
 			
-			<string>meta.block.embedded.c++.yacc</string>
-			
 			<key>patterns</key>
 			<array>
 				<dict>
