@@ -2,10 +2,10 @@
   "name": "vscode-yacc",
   "displayName": "Bison & Yacc",
   "description": "Syntax highlighting for Bison and Yacc in VSCode",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "publisher": "se2dev",
   "author": {
-      "name": "SE2Dev"
+    "name": "SE2Dev"
   },
   "repository": {
     "type": "git",
