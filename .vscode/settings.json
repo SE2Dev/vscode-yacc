@@ -1,0 +1,7 @@
+// Hide the /resources and /.git directories in VSCode
+{
+    "files.exclude": {
+        "**/.git": true,
+        "resources": true
+    }
+}
