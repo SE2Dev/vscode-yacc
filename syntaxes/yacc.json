@@ -14,7 +14,7 @@
 		"cpp.yacc - (string | comment)": {
 			"patterns": [
 				{
-					"include": "#injected.c++"
+					"include": "#injected.cpp"
 				}
 			]
 		}
@@ -28,10 +28,10 @@
 		}
 	],
 	"repository": {
-		"injected.c++": {
+		"injected.cpp": {
 			"patterns": [
 				{
-					"include": "source.c++"
+					"include": "source.cpp"
 				}
 			]
 		},
@@ -85,14 +85,14 @@
 		"grammar.before": {
 			"patterns": [
 				{
-					"include": "#decls.c++"
+					"include": "#decls.cpp"
 				},
 				{
 					"include": "#options"
 				}
 			]
 		},
-		"decls.c++": {
+		"decls.cpp": {
 			"begin": "^%{",
 			"beginCaptures": {
 				"0": {
