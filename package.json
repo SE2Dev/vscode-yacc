@@ -41,7 +41,7 @@
       {
         "language": "yacc",
         "scopeName": "source.yacc",
-        "path": "./syntaxes/yacc.tmLanguage"
+        "path": "./syntaxes/yacc.json"
       }
     ]
   }
